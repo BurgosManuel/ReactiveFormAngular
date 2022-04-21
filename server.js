@@ -3,12 +3,12 @@ const express = require('express');
 const app = express();
 
 // Serve static files
-app.use(express.static(__dirname + 'dist/formularios'));
+app.use(express.static(__dirname + '/dist/formularios'));
 
 // Send all requests to index.html
-app.get('', function(req, res) {
-  res.sendFile(path.join(__dirname + 'dist/formularios'));
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname + '/dist/formularios/index.html'));
 });
 
-//default Heroku port
-app.listen(process.env.PORT  5000);
+// default Heroku port
+app.listen(process.env.PORT || 5000);
