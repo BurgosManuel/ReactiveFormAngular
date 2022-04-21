@@ -1,7 +1,49 @@
+.container {
+    margin-top: 1rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: rgb(14, 0, 65);
+    align-items: center;
+    position: relative;
+}
+
 form {
-    max-width: 400px;
+    min-width: 350px;
     padding: 1rem;
-    margin: 1rem auto;
     border-radius: 1rem;
     background-color: lightblue;
+}
+
+.form-label {
+    font-size: 1.2rem;
+}
+
+.form-control {
+    font-size: 1.2rem;
+}
+
+.error-container {
+    border-radius: 1rem;
+    background-color: rgb(255, 190, 70);
+}
+
+.error-container h2 {
+    text-decoration: underline;
+}
+
+.errors div {
+    border-bottom: solid 1px black;
+    padding: 2rem;
+    width: 400px;
+}
+
+.errors div:last-child {
+    border-bottom: none;
+}
+
+.flex-center-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

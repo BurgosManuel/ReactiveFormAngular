@@ -20,4 +20,16 @@ export class LoginComponent {
       password: ['', [Validators.required, Validators.minLength(8)]],
     });
   }
+  // Creamos los getters para obtener el valor de c/u de los FormControl
+  get email() {
+    return this.form.get('email')
+  }
+
+  get user() {
+    return this.form.get('username')
+  }
+
+  get pass() {
+    return this.form.get('password')
+  }
 }

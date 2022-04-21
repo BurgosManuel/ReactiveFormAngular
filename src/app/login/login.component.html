@@ -1,19 +1,55 @@
-<form [formGroup]="form" class="flex-center">
-    <fieldset>
-        <div class="mb-3">
-            <label class="form-label" for="email">E-Mail</label>
-            <input id="email" class="form-control" type="email" formControlName="email">
+<main class="container">
+    <div class="row">
+        <div class="col-7 flex-center-col">
+            <form [formGroup]="form" class="flex-center">
+                <fieldset>
+                    <div class="mb-3">
+                        <label class="form-label" for="email">E-Mail</label>
+                        <input id="email" class="form-control" type="email" formControlName="email" autocomplete="off">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="username">Username</label>
+                        <input id="username" class="form-control" type="text" formControlName="username" autocomplete="off">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="password">Password</label>
+                        <input id="password" class="form-control" type="password" formControlName="password" autocomplete="off">
+                    </div>
+                    <div class="flex-center">
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </div>
+                </fieldset>
+            </form>
         </div>
-        <div class="mb-3">
-            <label class="form-label" for="username">Username</label>
-            <input id="username" class="form-control" type="text" formControlName="username">
+        <div class="col-5 error-container ">
+            <h2 class="mt-2 text-center">Error Logs</h2>
+            <div class="errors flex-center flex-wrap">
+                <div *ngIf="email?.errors" class="p-3">
+                    <p>The <b>e-mail</b> field has the following errors:</p>
+                    <ul>
+                        <li *ngIf="email?.errors?.['required']">This field is required.</li>
+                        <li *ngIf="email?.errors?.['email']">Invalid e-mail format.</li>
+                    </ul>
+                </div>
+        
+                <div *ngIf="user?.errors" class="p-3">
+                    <p>The <b>username</b> field has the following errors:</p>
+                    <ul>
+                        <li *ngIf="user?.errors?.['required']">This field is required.</li>
+                        <li *ngIf="user?.errors?.['minlength']">Min length: 5 characters.</li>
+                        <li *ngIf="user?.errors?.['maxlength']">Max length: 12 characters.</li>
+                    </ul>
+                </div>
+        
+                <div *ngIf="pass?.errors" class="p-3">
+                    <p>The <b>password</b> field has the following errors:</p>
+                    <ul>
+                        <li *ngIf="pass?.errors?.['required']">This field is required.</li>
+                        <li *ngIf="pass?.errors?.['minlength']">Min length: 8 characters.</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
-        <div class="mb-3">
-            <label class="form-label" for="password">Password</label>
-            <input id="password" class="form-control" type="password" formControlName="password">
-        </div>
-        <div class="flex-center">
-            <button type="submit" class="btn btn-primary">Register</button>
-        </div>
-    </fieldset>
-</form>
+    </div>    
+</main>
