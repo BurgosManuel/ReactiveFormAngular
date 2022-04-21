@@ -1,6 +1,6 @@
 <main class="container">
     <div class="row">
-        <div class="col-7 flex-center-col">
+        <div class="col-md-7 flex-center-col">
             <form [formGroup]="form" class="flex-center">
                 <fieldset>
                     <div class="mb-3">
@@ -21,7 +21,7 @@
                 </fieldset>
             </form>
         </div>
-        <div class="col-5 error-container ">
+        <div class="col-md-5 error-container ">
             <h2 class="mt-2 text-center">Error Logs</h2>
             <div class="errors flex-center flex-wrap">
                 <div *ngIf="email?.errors" class="p-3">

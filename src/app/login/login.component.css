@@ -8,7 +8,7 @@
 }
 
 form {
-    min-width: 350px;
+    max-width: 350px;
     padding: 1rem;
     border-radius: 1rem;
     background-color: lightblue;
@@ -24,9 +24,15 @@ form {
 
 .error-container {
     border-radius: 1rem;
+    margin-top: 2rem;
     background-color: rgb(255, 190, 70);
 }
 
+@media (min-width: 768px) {
+    .error-container {
+        margin-top: 0;
+    }
+}
 .error-container h2 {
     text-decoration: underline;
 }
